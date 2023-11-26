@@ -12,13 +12,13 @@ public class DepartmentService {
         return departmentRepository.findAll();
     }
 
-    public Department addDepartment(Department department) {
-        return departmentRepository.save(department);
-    }
+//    public Department addDepartment(Department department) {
+//        return departmentRepository.save(department);
+//    }
 
-    public Department getDepartmentById(Integer id) {
-        return departmentRepository.findById(id).orElse(null);
-    }
+//    public Department getDepartmentById(Integer id) {
+//        return departmentRepository.findById(id).orElse(null);
+//    }
 
     /*public Department updateDepartment(Integer id, Department updatedDepartment) {
         Department existingDepartment = departmentRepository.findById(id).orElse(null);
@@ -32,7 +32,7 @@ public class DepartmentService {
         }
     }*/
 
-    public void deleteDepartment(Integer id) {
-        departmentRepository.deleteById(id);
-    }
+//    public void deleteDepartment(Integer id) {
+//        departmentRepository.deleteById(id);
+//    }
 }

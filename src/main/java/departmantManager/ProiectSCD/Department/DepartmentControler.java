@@ -25,7 +25,7 @@ public class DepartmentControler {
 
     //CRUD
 
-    @PostMapping("/department")
+   /* @PostMapping("/department")
     public Department createDepartment(@RequestBody Department department) {
         return departmentService.addDepartment(department);
     }
@@ -33,7 +33,7 @@ public class DepartmentControler {
     @GetMapping("/department/{id}")
     public Department getDepartment(@PathVariable Integer id) {
         return departmentService.getDepartmentById(id);
-    }
+    }*/
 
     /*
 

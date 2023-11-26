@@ -1,5 +1,6 @@
 package departmantManager.ProiectSCD.Department;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,7 @@ public class Department {
     String Description;
 
     @ManyToOne
+    @JsonBackReference
     Department parent;
 
-//// proba
 }
