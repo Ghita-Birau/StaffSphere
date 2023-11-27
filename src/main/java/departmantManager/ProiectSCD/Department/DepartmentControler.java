@@ -37,8 +37,8 @@ public class DepartmentControler {
         return departmentService.updateDepartment(id, updates);
     }
 
-//    @DeleteMapping("/department/{id}")
-//    public void deleteDepartment(@PathVariable Integer id) {
-//        departmentService.deleteDepartment(id);
-//    }
+    @DeleteMapping("/department/{id}")
+    public void deleteDepartment(@PathVariable Integer id) {
+        departmentService.deleteDepartment(id);
+    }
 }

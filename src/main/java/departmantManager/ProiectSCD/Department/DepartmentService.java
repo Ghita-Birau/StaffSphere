@@ -53,7 +53,7 @@ public class DepartmentService {
         }
     }
 
-//    public void deleteDepartment(Integer id) {
-//        departmentRepository.deleteById(id);
-//    }
+    public void deleteDepartment(Integer id) {
+        departmentRepository.deleteById(id);
+    }
 }
