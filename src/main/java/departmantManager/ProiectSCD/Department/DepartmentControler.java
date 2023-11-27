@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
+@RequestMapping("/api")
 public class DepartmentControler {
 
     // getAllEmployeePerDepartment
@@ -15,25 +17,28 @@ public class DepartmentControler {
     @Autowired
     DepartmentService departmentService;
 
-    @GetMapping("/api/department")
+    @GetMapping("/department")
     public List<Department> getAllDepartments() {
         return departmentService.getAllDepartments();
     }
 
-    @PostMapping("/api/department")
+    @PostMapping("/department")
     public Department createDepartment(@RequestBody Department department) {
         return departmentService.addDepartment(department);
     }
 
-    /*@GetMapping("/department/{id}")
+    @GetMapping("/department/{id}")
     public Department getDepartment(@PathVariable Integer id) {
         return departmentService.getDepartmentById(id);
-    }*/
+    }
 
-    /*
+    @PutMapping("/department/{id}")
+    public Department updateDepartment(@PathVariable Integer id, @RequestBody Map<String, Object> updates) {
+        return departmentService.updateDepartment(id, updates);
+    }
 
-    @DeleteMapping("/department/{id}")
-    public void deleteDepartment(@PathVariable Integer id) {
-        departmentService.deleteDepartment(id);
-    }*/
+//    @DeleteMapping("/department/{id}")
+//    public void deleteDepartment(@PathVariable Integer id) {
+//        departmentService.deleteDepartment(id);
+//    }
 }
