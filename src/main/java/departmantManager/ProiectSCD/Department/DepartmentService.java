@@ -8,13 +8,13 @@ import java.util.List;
 public class DepartmentService {
     @Autowired
     DepartmentRepository departmentRepository;
-    public List<Department> getAllDepartments(){
+    public List<Department> getAllDepartments() {
         return departmentRepository.findAll();
     }
 
-//    public Department addDepartment(Department department) {
-//        return departmentRepository.save(department);
-//    }
+    public Department addDepartment(Department department) {
+        return departmentRepository.save(department);
+    }
 
 //    public Department getDepartmentById(Integer id) {
 //        return departmentRepository.findById(id).orElse(null);

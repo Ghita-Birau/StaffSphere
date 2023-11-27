@@ -2,8 +2,6 @@ package departmantManager.ProiectSCD.Department;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -11,14 +9,13 @@ import javax.persistence.*;
 @Data
 public class Department {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    String Description;
+    String description;
 
     @ManyToOne
-    @JsonBackReference
+    @JoinColumn (name="parent_id")
     Department parent;
 
 }
