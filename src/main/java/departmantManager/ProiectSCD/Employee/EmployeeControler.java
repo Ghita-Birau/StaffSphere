@@ -20,6 +20,11 @@ public class EmployeeControler {
         return employeeService.getAllEmployee();
     }
 
+    @GetMapping("/employee/{id}")
+    public Employee getEmployee(@PathVariable Integer id) {
+        return employeeService.getEmployeeById(id);
+    }
+
     @PostMapping("/employee")
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
