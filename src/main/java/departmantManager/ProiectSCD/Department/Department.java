@@ -15,7 +15,7 @@ public class Department {
     String description;
 
     @ManyToOne
-    @JoinColumn (name="parent_id")
-    Department parent;
+        @JoinColumn (name="parent_id")
+        Department parent;
 
 }

@@ -53,6 +53,17 @@ public class DepartmentService {
         }
     }
 
+//    public void deleteDepartment(Integer id) {
+//        Department department = departmentRepository.findById(id).orElse(null);
+//        if (department != null) {
+//            // Înainte de a șterge departamentul, șterge-l și pe părinte
+//            Department parent = department.getParent();
+//            if (parent != null) {
+//                deleteDepartment(parent.getId());
+//            }
+//            departmentRepository.deleteById(id);
+//        }
+//    }
     public void deleteDepartment(Integer id) {
         departmentRepository.deleteById(id);
     }
