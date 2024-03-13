@@ -15,7 +15,6 @@ import java.util.List;
 
 public class DepartmentControler {
 
-    // getAllManagersPerDepartment
     private final DepartmentService departmentService;
 
     @GetMapping("/all/departments")

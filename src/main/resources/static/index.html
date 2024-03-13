@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Application Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/apl.js"></script>
+</head>
+
+<body onload="getEmployees(); getDepartments();">
+
+<h1 align="center">Admin Application</h1>
+
+<div align="center">
+  <!-- Adăugați butoanele de toggle pentru a alege între dropdown-uri și tabele -->
+  <label>
+    <input type="radio" name="displayOption" value="dropdown"> Delete
+  </label>
+  <label>
+    <input type="radio" name="displayOption" value="table" checked> Show
+  </label>
+
+  <!-- Adăugați div-uri separate pentru dropdown-uri și tabele -->
+  <div id="dropdowns" style="display: none;">
+    <table align="center">
+      <tr>
+        <td><b>Department</b></td>
+        <td><select name="departments" id="selectDepartment"></select></td>
+      </tr>
+      <tr>
+        <td><b>Employee</b></td>
+        <td><select name="employees" id="selectEmployee"></select></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div align="center">
+    <button onclick="showAddEmployeeForm()">Add Employee</button>
+    <button onclick="showAddDepartmentForm()">Add Department</button>
+  </div>
+
+  <!-- Adăugați formularul pentru adăugarea angajatului -->
+  <div id="addEmployeeForm" style="display: none;">
+    <h2>Add new employee</h2>
+    <form id="employeeForm">
+      <label for="employeeName">Name:</label>
+      <input type="text" id="employeeName" name="employeeName" required>
+
+      <label for="employeeEmail">Email:</label>
+      <input type="text" id="employeeEmail" name="employeeEmail" required>
+
+      <label for="employeeDepartment">Department:</label>
+      <select id="employeeDepartment" name="employeeDepartment" required></select>
+
+      <label for="employeeManager">Manager:</label>
+      <select id="employeeManager" name="employeeManager" required></select>
+
+      <input type="button" value="Add employee" onclick="addEmployee()">
+    </form>
+  </div>
+
+  <div id="addDepartmentForm" style="display: none;">
+    <h2>Add new department</h2>
+    <form id="departmentForm">
+      <label for="departmentDescription">Description:</label>
+      <input type="text" id="departmentDescription" name="departmentDescription" required>
+
+      <label for="departmentParentDescription">Parent Description:</label>
+      <input type="text" id="departmentParentDescription" name="departmentParentDescription" required>
+
+      <input type="button" value="Add department" onclick="addDepartment()">
+    </form>
+  </div>
+
+
+  <div id="tables" style="display: block;">
+    <!-- Adăugați div-uri separate pentru angajați și departamente -->
+    <div id="employeesTable">
+      <h2>Employees</h2>
+      <table id="employeeTable" border="1">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Manager</th>
+          <th>Department</th>
+          <th>Email</th>
+        </tr>
+        <!-- Aici veți afișa angajații -->
+      </table>
+    </div>
+
+    <div id="departmentsTable">
+      <h2>Departments</h2>
+      <table id="departmentTable" border="1">
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Parent Description</th>
+        </tr>
+        <!-- Aici veți afișa departamentele -->
+      </table>
+    </div>
+  </div>
+</div>
